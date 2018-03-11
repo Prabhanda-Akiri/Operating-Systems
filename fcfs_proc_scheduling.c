@@ -47,25 +47,18 @@ int main()
 		}
 	}
 
-	printf("\n");
-	printf("|-------|-------|-------|-------|-------|-------|\n");
-	printf("| P.No	| Ar.T 	| Bu.T 	| CT 	| TaT 	| WT 	|\n");
-	printf("|-------|-------|-------|-------|-------|-------|\n");
-	for(i=0;i<n;i++)
-	{
-		printf("| %d 	| %d 	| %d 	| %d 	| %d 	| %d 	|\n",i+1,*(at+i),*(bt+i),*(ct+i),*(tot+i),*(wt+i));
-		printf("|-------|-------|-------|-------|-------|-------|\n");
-	}
 	float avg_tot=0,avg_wt=0;
 
+	printf("\n\nP.No 	Ar.T 	Bu.T 	CT 	Tat 	Wt\n");
 	for(i=0;i<n;i++)
 	{
 		avg_tot=avg_tot+*(tot+i);
 		avg_wt=avg_wt+*(wt+i);
+		printf("\nP%d 	%d 	%d 	%d 	%d 	%d",i+1,*(at+i),*(bt+i),*(ct+i),*(tot+i),*(wt+i));
 	}
 
 	avg_wt=avg_wt/n;
 	avg_tot=avg_tot/n;
 
-	printf("\n\nAverage Turn-Around-Time:	%f \nAverage Waiting-Time:	%f\n",avg_tot,avg_wt);
+	printf("\n\nAverage Turn-Over-Time:	%f \nAverage Waiting-Time:	%f\n",avg_tot,avg_wt);
 }
